@@ -24,7 +24,7 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
     
     $scope.verificarCompromissos = (function(){
         
-        navigator.serviceWorker.register( '/assets/js/workers/sw.js' );
+        navigator.serviceWorker.register( 'assets/js/workers/sw.js' );
         
         window.setInterval( function(){
             
