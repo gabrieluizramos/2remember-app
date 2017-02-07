@@ -6,22 +6,28 @@ angular.module( "2remember" ).config( function( $routeProvider , $locationProvid
       requireBase: false
     });
     
+    if ( window.location.protocol != 'https:' ){
+        window.location.protocol = 'https:';
+    }
+    
+    var url = ( window.location.href == 'gabrieluizramos.github.io' ) ? '/2remember-app/' : '/';
+    
     $routeProvider
-    .when( '/' , {
+    .when( url , {
         templateUrl : "views/home.html" ,
         controller: 'homeCtrl'
     })
-    .when( '/listar' , {
+    .when( url + 'listar' , {
         templateUrl : "views/listar.html" ,
         controller: 'listarCtrl'
     })
-    .when( '/cadastrar' , {
+    .when( url + 'cadastrar' , {
         templateUrl : "views/cadastrar.html" ,
         controller: 'cadastrarCtrl'
     })
-    .when( '/historico' , {
+    .when( url + 'historico' , {
         templateUrl : "views/historico.html" ,
         controller: 'historicoCtrl'
     })
-    .otherwise( { redirectTo: '/' } );
+    .otherwise( { redirectTo: url } );
 });
