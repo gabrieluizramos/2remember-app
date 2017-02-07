@@ -12,21 +12,23 @@ angular.module( "2remember" ).config( function( $routeProvider , $locationProvid
     
     var url = ( window.location.href == 'gabrieluizramos.github.io' ) ? '/2remember-app/' : '/';
     
+    console.log( url );
+    
     $routeProvider
     .when( url , {
-        templateUrl : "views/home.html" ,
+        templateUrl : url + "views/home.html" ,
         controller: 'homeCtrl'
     })
     .when( url + 'listar' , {
-        templateUrl : "views/listar.html" ,
+        templateUrl : url + "views/listar.html" ,
         controller: 'listarCtrl'
     })
     .when( url + 'cadastrar' , {
-        templateUrl : "views/cadastrar.html" ,
+        templateUrl : url + "views/cadastrar.html" ,
         controller: 'cadastrarCtrl'
     })
     .when( url + 'historico' , {
-        templateUrl : "views/historico.html" ,
+        templateUrl : url + "views/historico.html" ,
         controller: 'historicoCtrl'
     })
     .otherwise( { redirectTo: url } );
