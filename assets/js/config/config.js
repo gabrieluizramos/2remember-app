@@ -10,7 +10,7 @@ angular.module( "2remember" ).config( function( $routeProvider , $locationProvid
         window.location.protocol = 'https:';
     }
     
-    var url = ( window.location.href == 'gabrieluizramos.github.io' ) ? '/2remember-app/' : '/';
+    var url = window.location.href.includes( 'github' ) ? '/2remember-app/' : '/';
     
     console.log( url );
     
