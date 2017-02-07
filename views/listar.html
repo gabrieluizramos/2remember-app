@@ -1,0 +1,20 @@
+<div class="container padded">
+    <h1 class="flow-text mr-bt-50">Visualizar Lembretes</h1>
+    <div class="row">
+        <div class="col m4 s12" ng-repeat="lembrete in lembretes">
+            <div class="card brown lighten-5">
+                <div class="card-content black-text">
+                    <span class="card-title">{{lembrete.dados.nome}}</span>
+                    <p>{{lembrete.dados.descricao}}</p>
+                </div>
+                <div class="card-content black-text">
+                   Às {{lembrete.dados.hora}}h{{lembrete.dados.minuto}}.
+                   Lembrete marcado para {{lembrete.dados.antecedencia}} minutos antes do compromisso.
+                </div>
+                <div class="card-action brown-text">
+                    <a ng-click="apagarLembretes( lembrete.id )"><i class="material-icons">delete</i></a></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

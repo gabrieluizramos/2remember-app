@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<meta name="theme-color" content="#e65100" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+	<!-- WEBAPP -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="assets/img/icon-192x192.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">    
+	<meta name="apple-mobile-web-app-title" content="2Remember \n Seus lembretes ">
+	<link rel="apple-touch-startup-image" href="assets/img/icon.png">
+	<link rel="apple-touch-icon" href="assets/img/icon.png">  
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="width">  
+
+	<title>2Remember</title>
+	
+	<!-- JQUERY -->
+	<script src="vendor/jquery/jquery-3.1.1.min.js"></script>
+	
+	<!--MATERIALIZE -->
+	<link rel="stylesheet" href="vendor/materialize/css/materialize.min.css" type="text/css" />
+	<link rel="stylesheet" href="vendor/materialize/css/icon.css" type="text/css" />
+	<script src="vendor/materialize/js/materialize.min.js"></script>
+	
+	<!-- ANGULAR -->
+	<script src="vendor/angular/angular.min.js"></script>
+	<script src="vendor/angular/angular-route.min.js"></script>
+	
+	<!-- CUSTOM -->
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- INSTANCE & CONFIG -->
+	<script src="assets/js/instance/instance.js"></script>
+	<script src="assets/js/config/config.js"></script>
+	<!-- CONTROLLERS -->
+	<script src="assets/js/controllers/mainCtrl.js"></script>
+	<script src="assets/js/controllers/homeCtrl.js"></script>
+	<script src="assets/js/controllers/cadastrarCtrl.js"></script>
+	<script src="assets/js/controllers/listarCtrl.js"></script>
+	<!-- API -->
+	<script src="assets/js/services/lembretesAPI.js"></script>
+	
+</head>
+<body ng-app="2remember" class="deep-orange darken-4" ng-controller="mainCtrl">
+	
+	<!--<nav>-->
+	<!--	<div class="nav-wrapper">-->
+	<!--		<a href="/" class="brand-logo">2Remember</a>-->
+	<!--		<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>-->
+	<!--		<ul class="right hide-on-med-and-down" id="mobile-nav">-->
+	<!--			<li><a href="/cadastrar" title="cadastrar"><i class="material-icons">av_timer</i></a></li>-->
+	<!--			<li><a href="/listar" title="visualizar todos"><i class="material-icons">view_list</i></a></li>-->
+	<!--			<li><a href="/historico" title="histórico"><i class="material-icons">today</i></a></li>-->
+	<!--		</ul>-->
+	<!--	</div>-->
+	<!--</nav>-->
+	
+	<nav class="nav orange darken-4">
+	<div class="nav-wrapper">
+		<a href="/" class="brand-logo">2Remember</a>
+		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
+			<li><a href="/cadastrar" title="cadastrar"><i class="material-icons">av_timer</i></a></li>
+			<li><a href="/listar" title="visualizar todos"><i class="material-icons">view_list</i></a></li>
+			<li><a href="/historico" title="histórico"><i class="material-icons">today</i></a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+			<li><a href="/" title="cadastrar" data-menu="mobile">Home</a></li>
+			<li><a href="/cadastrar" title="cadastrar" data-menu="mobile">Cadastrar lembrete</a></li>
+			<li><a href="/listar" title="visualizar todos" data-menu="mobile">Visualizar lembretes</a></li>
+			<li><a href="/historico" title="histórico" data-menu="mobile">Histórico</a></li>
+		</ul>
+	</div>
+	</nav>
+
+	
+
+	<ng-view class="white-text"></ng-view>
+	
+	<script>
+		 $(".button-collapse").sideNav();
+		 $( '[data-menu="mobile"]' ).on( 'click' , function(){
+		 	$( '.button-collapse' ).trigger( 'click' );
+		 });
+	</script>
+
+</body>
+
+</html>

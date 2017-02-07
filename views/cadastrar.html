@@ -1,0 +1,42 @@
+<div class="container padded">
+    <h1 class="flow-text mr-bt-50">Cadastrar Lembrete</h1>
+    <form action="" oninput="outputMinutos.value = rangeMinutos.valueAsNumber" name="formLembretes">
+        <div class="row">
+            <div class="input-field col m6 s12">
+                <input id="nome" type="text" ng-model="lembrete.nome">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col m6 s12">
+                <input id="descricao" type="text" ng-model="lembrete.descricao">
+                <label for="descricao">Descrição</label>
+            </div>
+            <div class="input-field col s12">
+                Qual o horário do compromisso?
+            </div>
+            <div class="input-field col m3 s6">
+                <input id="descricao" type="number" ng-model="lembrete.hora">
+                <label for="descricao">Horas</label>
+            </div>
+            <div class="input-field col m3 s6">
+                <input id="descricao" type="number" ng-model="lembrete.minuto">
+                <label for="descricao">Minutos</label>
+            </div>
+            <div class="input-field col s12">
+                <p>
+                   Deseja receber notificação com quantos minutos de antecedência?
+                </p>
+                <div class="s4">
+                    <p class="range-field">
+                        <input type="range" id="rangeMinutos" name="rangeMinutos" min="1" max="120" value="5" ng-model="lembrete.antecedencia" />
+                    </p>
+                </div>
+                <p>
+                    Avise-me <output for="rangeMinutos" id="outputMinutos" name="outputMinutos">5</output> minutos antes.
+                </p>
+            </div>
+            <div class="input-field col s12">
+                <a class="waves-effect waves-light btn deep-orange text-black" ng-click="cadastrarLembrete( lembrete )">cadastrar</a>
+            </div>
+        </div>
+    </form>
+</div>
