@@ -22,7 +22,6 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
     	
     }
     
-    
     $scope.verificarCompromissos = (function(){
         
         navigator.serviceWorker.register( $scope.urlList.defaultUrl + 'assets/js/workers/sw.js' );
