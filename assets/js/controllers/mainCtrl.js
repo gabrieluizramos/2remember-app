@@ -59,4 +59,6 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
         
     })();
     
+    $scope.urlList = window.urlList;
+    
 });

@@ -11,25 +11,44 @@ angular.module( "2remember" ).config( function( $routeProvider , $locationProvid
     }
     
     var url = window.location.href.includes( 'github' ) ? '/2remember-app/' : '/';
-    
-    console.log( url );
+   
+    window.urlList = {
+        defaultUrl : url ,
+        
+        home : {
+            url : url , 
+            config : {
+                templateUrl : url + "views/home.html" ,
+                controller: 'homeCtrl'
+            }
+        } ,
+        listar : {
+            url : url + 'listar' ,
+            config : {
+                templateUrl : url + "views/listar.html" ,
+                controller: 'listarCtrl'
+            }
+        } ,
+        cadastrar : {
+            url : url + 'cadastrar' ,
+            config : {
+                templateUrl : url + "views/cadastrar.html" ,
+                controller: 'cadastrarCtrl'
+            }
+        } ,
+        historico : {
+            url : url + 'historico' ,
+            config : {
+                templateUrl : url + "views/historico.html" ,
+                controller: 'historicoCtrl'
+            }
+        }
+    };
     
     $routeProvider
-    .when( url , {
-        templateUrl : url + "views/home.html" ,
-        controller: 'homeCtrl'
-    })
-    .when( url + 'listar' , {
-        templateUrl : url + "views/listar.html" ,
-        controller: 'listarCtrl'
-    })
-    .when( url + 'cadastrar' , {
-        templateUrl : url + "views/cadastrar.html" ,
-        controller: 'cadastrarCtrl'
-    })
-    .when( url + 'historico' , {
-        templateUrl : url + "views/historico.html" ,
-        controller: 'historicoCtrl'
-    })
-    .otherwise( { redirectTo: url } );
+    .when( window.urlList.home.url , window.urlList.home.config )
+    .when( window.urlList.listar.url , window.urlList.listar.config)
+    .when( window.urlList.cadastrar.url , window.urlList.cadastrar.config)
+    .when( window.urlList.historico.url , window.urlList.historico.config)
+    .otherwise( window.urlList.defaultUrl );
 });
