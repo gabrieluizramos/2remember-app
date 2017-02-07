@@ -46,7 +46,7 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
                     
                     var conteudoMsg = {
                         body : 'Lembre-se do seu compromisso "'+ nomeLembrete +'". Ele começará em ' + antecedencia + ' minutos!' ,
-                        icon : '/assets/img/icon.png'
+                        icon : $scope.urlList.defaultUrl + 'assets/img/icon.png'
                     }
                     
                     $scope.enviarNotificacao( conteudoMsg );
