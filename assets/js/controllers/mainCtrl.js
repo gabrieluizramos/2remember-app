@@ -2,6 +2,7 @@
 angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembretesAPI ){
     
     $scope.lembretesNotificados = [];
+    $scope.urlList = window.urlList;
     
     $scope.permitirNotificacoes = (function(){
         if( Notification.persmission != 'granted' ){
@@ -24,7 +25,7 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
     
     $scope.verificarCompromissos = (function(){
         
-        navigator.serviceWorker.register( 'assets/js/workers/sw.js' );
+        navigator.serviceWorker.register( $scope.urlList.defaultUrl + 'assets/js/workers/sw.js' );
         
         window.setInterval( function(){
             
@@ -58,7 +59,5 @@ angular.module( '2remember' ).controller( 'mainCtrl' , function( $scope , lembre
         } , 1000 );
         
     })();
-    
-    $scope.urlList = window.urlList;
     
 });
