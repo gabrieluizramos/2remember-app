@@ -6,9 +6,9 @@ angular.module( "2remember" ).config( function( $routeProvider , $locationProvid
       requireBase: false
     });
     
-    if ( window.location.protocol != 'https:' ){
-        window.location.protocol = 'https:';
-    }
+    // if ( window.location.protocol != 'https:' ){
+    //     window.location.protocol = 'https:';
+    // }
     
     var url = window.location.hostname === 'localhost' ? '/' : '/2remember-app/';
    
